@@ -1,0 +1,14 @@
+FORMAT
+type: ensight gold
+
+GEOMETRY
+model: "for fz.geo"
+
+VARIABLE
+scalar per node: x_velocity       "for fz.scl1"
+scalar per node: y_velocity       "for fz.scl2"
+scalar per node: z_velocity       "for fz.scl3"
+vector per node: velocity         "for fz.vel"
+
+SCRIPTS
+metadata: "for fz.xml"
