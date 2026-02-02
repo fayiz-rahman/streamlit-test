@@ -1,3 +1,14 @@
+
+
+
+import os
+
+# --- 1. HEADLESS DISPLAY SETUP (CRITICAL FOR CLOUD) ---
+# We must start the "fake screen" before importing PyVista
+os.system('/usr/bin/Xvfb :99 -screen 0 1024x768x24 &')
+os.environ['DISPLAY'] = ':99'
+
+
 import streamlit as st
 import pyvista as pv
 import numpy as np
