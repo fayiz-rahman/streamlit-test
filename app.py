@@ -32,10 +32,15 @@ st.markdown("""
         color: #FFFFFF;
     }
     
-    /* 2. Hide the Top White Header Bar */
+    /* 2. THE FIX: Make Header Transparent but KEEP IT CLICKABLE */
     header[data-testid="stHeader"] {
         background-color: rgba(0,0,0,0); /* Transparent */
-        visibility: hidden; /* Or set to visible if you need the menu */
+        /* Removed 'visibility: hidden' so you can see the sidebar button! */
+    }
+    
+    /* Force the Menu/Sidebar buttons to be White so they show up on black */
+    header[data-testid="stHeader"] button {
+        color: #FFFFFF !important;
     }
     
     /* 3. Sidebar Background */
@@ -67,7 +72,7 @@ st.markdown("""
     
     /* 6. Remove Padding for Full Screen */
     .block-container {
-        padding-top: 0rem;
+        padding-top: 2rem; /* Added small padding so header doesn't cover content */
         padding-bottom: 0rem;
         padding-left: 1rem;
         padding-right: 1rem;
@@ -83,7 +88,7 @@ st.markdown("""
 # 4. SIDEBAR
 # ==========================================
 with st.sidebar:
-    st.markdown("<h2 style='text-align: center; color: #00FFFF;'>Yottakern</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: #00FFFF;'>NING RESEARCH</h2>", unsafe_allow_html=True)
     st.markdown("---")
     
     st.header("🎛️ Controls")
