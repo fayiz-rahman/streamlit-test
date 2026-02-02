@@ -4,26 +4,18 @@ import streamlit as st
 import pyvista as pv
 import os
 
-# --- 1. FORCE HEADLESS MODE (The Fix) ---
-# Set the backend to "static" or "client" to avoid server-side rendering crashes
-pv.set_plot_theme("document")
-pv.global_theme.jupyter_backend = 'static'
-
-# Start the fake screen explicitly using PyVista's built-in tool
-# This is safer than using os.system()
+# --- 1. HEADLESS MODE CONFIG ---
+# This is the ONLY line needed to fix the "Segmentation Fault" crash.
+# It starts a fake screen for the 3D engine.
 pv.start_xvfb()
 
-# --- 2. NOW IMPORT REST ---
+# --- 2. IMPORT REST ---
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patheffects as pe
 from stpyvista import stpyvista
-import os
 
-# --- 1. HEADLESS DISPLAY SETUP (CRITICAL FOR CLOUD) ---
-# We must start the "fake screen" before importing PyVista
-os.system('/usr/bin/Xvfb :99 -screen 0 1024x768x24 &')
-os.environ['DISPLAY'] = ':99'
+# ... Rest of your code (set_page_config, etc.) ...
 
 
 import streamlit as st
