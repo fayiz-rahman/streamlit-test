@@ -18,7 +18,7 @@ import plotly.graph_objects as go
 # ==========================================
 st.set_page_config(
     layout="wide", 
-    page_title="NING RESEARCH | Digital Twin",
+    page_title="Yottakern | Digital Twin",
     page_icon="⚗️",
     initial_sidebar_state="expanded"
 )
@@ -88,7 +88,7 @@ st.markdown("""
 # 4. SIDEBAR
 # ==========================================
 with st.sidebar:
-    st.markdown("<h2 style='text-align: center; color: #00FFFF;'>NING RESEARCH</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: #00FFFF;'>Yottakern AI</h2>", unsafe_allow_html=True)
     st.markdown("---")
     
     st.header("🎛️ Controls")
