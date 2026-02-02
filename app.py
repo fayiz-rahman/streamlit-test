@@ -1,6 +1,23 @@
 
 
+import streamlit as st
+import pyvista as pv
+import os
 
+# --- 1. FORCE HEADLESS MODE (The Fix) ---
+# Set the backend to "static" or "client" to avoid server-side rendering crashes
+pv.set_plot_theme("document")
+pv.global_theme.jupyter_backend = 'static'
+
+# Start the fake screen explicitly using PyVista's built-in tool
+# This is safer than using os.system()
+pv.start_xvfb()
+
+# --- 2. NOW IMPORT REST ---
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.patheffects as pe
+from stpyvista import stpyvista
 import os
 
 # --- 1. HEADLESS DISPLAY SETUP (CRITICAL FOR CLOUD) ---

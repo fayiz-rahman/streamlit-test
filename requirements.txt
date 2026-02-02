@@ -6,3 +6,6 @@ matplotlib
 plotly
 scipy
 scikit-learn
+trame
+trame-vuetify
+trame-vtk
